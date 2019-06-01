@@ -4,7 +4,31 @@
 <!-- 슬라이더 섹션 -->
 <section id="slider">
     <div class="container">
-        슬라이드 섹션 입니다.
+        <div class="slider">
+            <div class="slide-image active" style="background-image: url('/images/schoolLife.jpg')">
+                <!-- <div class="filter"></div> -->
+                <h1>슬라이드 제목</h1>
+                <p>슬라이드의 내용을 여기다가 표시</p>
+            </div>
+            <div class="slide-image" style="background-image: url('/images/robot.jpg')">
+                <!-- <div class="filter"></div> -->
+                <h1>슬라이드 제목</h1>
+                <p>슬라이드의 내용을 여기다가 표시</p>
+            </div>
+            <div class="slide-image" style="background-image: url('/images/bank.png')">
+                <!-- <div class="filter"></div> -->
+                <h1>슬라이드 제목</h1>
+                <p>슬라이드의 내용을 여기다가 표시</p>
+            </div>
+        </div>
+
+        <div class="indecator">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
     </div>
 </section>
 
