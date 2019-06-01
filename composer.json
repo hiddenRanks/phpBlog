@@ -1,0 +1,13 @@
+{
+    "name": "gondr/blog",
+    "description": "blog page with php",
+    "authors": [
+        {
+            "name": "ririblathmerhen",
+            "email": "mongjja106@gmail.com"
+        }
+    ],
+    "require": {
+        "jenssegers/blade": "^1.2"
+    }
+}
