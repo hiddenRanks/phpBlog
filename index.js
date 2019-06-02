@@ -8,4 +8,8 @@ import App from './jsmodule/App';
 
 $(function() {
     let app = new App();
+
+    if(typeof msg !== "undefined") {
+        app.makeToast(msg);
+    }
 });
