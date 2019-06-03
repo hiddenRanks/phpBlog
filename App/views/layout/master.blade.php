@@ -20,28 +20,15 @@
 </head>
 
 <body>
-    <aside id="submenu">
-        <h2 class="my-3 text-center">Submenu</h2>
-        @if(isset($_SESSION['user']))
-            <a href="/logout" class="btn btn-block btn-outline-primary mt-2">로그아웃</a>
-            <a href="/post" class="btn btn-block btn-outline-primary">포스팅</a>
-        @else
-            <a href="/login" class="btn btn-block btn-outline-primary mt-2">로그인</a>
-        @endif
-    </aside>
-
-    <div id="toastList"></div>
-
     <section id="main">
-        <div class="container">
-            <header class="d-flex">
-                <div class="logo">
-                    <h1>My Game Blog</h1>
-                </div>
+        <div class="logo">
+            <img src="images/CC4nHv6.jpg">
+        </div>
 
-                <div class="icon-bar">
-                    <span><i class="fas fa-search"></i></span>
-                    <span id="btnSubmenu"><i class="fas fa-bars"></i></span>
+        <div class="container">
+            <header>
+                <div class="textLogo">
+                    <span class="blogName">블로그 이름 부분!</span>
                 </div>
             </header>
         </div>
@@ -50,12 +37,7 @@
     @yield('maincontent')
 
     <footer>
-        <div class="container">
-            <div class="font">
-                <p class="Rightline">DESIGN BY mong</p> <br>
-                <p>Copyright mong, 2019 Allright reserved.</p>
-            </div>
-        </div>
+        
     </footer>
 </body>
 
