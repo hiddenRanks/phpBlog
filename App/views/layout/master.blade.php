@@ -26,6 +26,33 @@
         </div>
 
         <div class="container">
+            @if(!isset($_SESSION['user']))
+            <div class="notLogin">
+                <a href="#">Login</a>
+            </div>
+            @else
+            <div class="loging">
+                <div class="posting">
+                    <a href="#">포스팅</a>
+                </div>
+
+                <div class="logout">
+                    <a href="#">로그아웃</a>
+                </div>
+            </div>
+            @endif
+
+            <div class="homeIcon">
+                <span>
+                    <a href="#">HOME</a>
+                </span>
+                <span class="search">
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </span>
+            </div>
+
             <header>
                 <div class="looksBlog">
                     <span class="todayLook">Today: 13명</span> /
@@ -33,42 +60,26 @@
                 </div>
 
                 <div class="textLogo">
-                    <span class="blogName">블로그 이름 부분!</span>
+                    <span class="blogName">웹툰과 만화의 방</span>
                     <div class="profile">
                         <div class="imgProfile"></div>
-                        <span class="nickName">닉네임</span>
+                        <span class="nickName">프레이</span>
                     </div>
                 </div>
-
-                @if(isset($_SESSION['user']))
-                <div class="notLogin">
-                    <a href="#">Login</a>
-                </div>
-                @else
-                <div class="loging">
-                    <div class="posting">
-                        <a href="#">포스팅</a>
-                    </div>
-
-                    <div class="logout">
-                        <a href="#">로그아웃</a>
-                    </div>
-                </div>
-                @endif
             </header>
         </div>
     </section>
 
     @yield('maincontent')
 
-    <section id="foot">
+    <!-- <section id="foot">
         <div class="container">
             <footer>
                 <span class="maker">DESIGN BY mong</span>
                 <span class="reference">참고한 곳: naver blog</span>
             </footer>
         </div>
-    </section>
+    </section> -->
 </body>
 
 </html>

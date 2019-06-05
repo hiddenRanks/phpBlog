@@ -7,7 +7,17 @@
 }
 
 section {
-    width: 1920px;
+    width: 1902px;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 100%;
+    z-index: 10;
 }
 
 section#head {
@@ -20,7 +30,7 @@ section#head > .logo::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(rgba(0,0,0,1), rgba(255,255,255,0.1), rgba(0,0,0,0.5));
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
     z-index: 1;
 }
 
@@ -29,22 +39,27 @@ section#head > .logo::before {
     height: 100%;
 }
 
-.container {
+.container > .homeIcon > span {
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1200px;
-    height: 100%;
-    z-index: 10;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    line-height: 50px;
+    top: 0;
+    left: 20px;
 }
 
-header {
-    width: 100%;
-    height: 100%;
-    position: relative;
+.container > .homeIcon span.search {
+    position: absolute;
+    left: 7%;
 }
 
-header > .notLogin a {
+.homeIcon > span > a { 
+    color: #fff; 
+    text-decoration: none; 
+}
+
+.container > .notLogin a {
     position: absolute;
     width: 8%;
     height: 45px;
@@ -57,7 +72,7 @@ header > .notLogin a {
     border: 2px solid #fff;
 }
 
-header > .notLogin a:hover {
+.container > .notLogin a:hover {
     border: 0;
     background-color: #fff;
     color: black;
@@ -66,17 +81,67 @@ header > .notLogin a:hover {
     text-decoration: none;
 }
 
+.container > .loging {
+    position: absolute;
+    width: 80%;
+    height: 50px;
+    bottom: 50px;
+    z-index: 1;
+}
+
+.loging > div a {
+    width: 15%;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.5);
+    display: block;
+    float: left;
+    border-radius: 20px;
+    transition: all 0.4s;
+}
+
+.loging > div.posting a {
+    border: 2px solid #3ec729;
+    color: #3ec729;
+}
+
+.loging > div.logout > a {
+    border: 2px solid #ff3d3d;
+    color: #ff3d3d;
+    margin-left: 10px;
+}
+
+.loging > div.posting > a:hover {
+    background-color: #3ec729;
+    color: #fff;
+}
+
+.loging > div.logout > a:hover {
+    background-color: #ff3d3d;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 header > .looksBlog, .textLogo {
     margin: 0 auto;
     margin-top: 10%;
-    width: 80%;
+    width: 100%;
     padding: 0 10px;
 }
 
 header > .looksBlog {
     font-size: 14px;
     font-weight: 400;
-    color: #fff;
+    color: #ccc;
 }
 
 .looksBlog > span:first-child {
@@ -90,11 +155,12 @@ header > .textLogo {
 
 .textLogo > .blogName {
     font-size: 35px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     color: #fff;
 }
 
 .profile {
-    margin-top: 10px;
+    margin-top: 30px;
     width: 100%;
     height: 55px;
     color: #fff;
@@ -104,6 +170,8 @@ header > .textLogo {
     width: 55px;
     height: 55px;
     border-radius: 100%;
+    overflow: hidden;
+    background-color: #fff;
     border: 1px solid #fff;
     float: left;
 }
@@ -112,6 +180,139 @@ header > .textLogo {
     line-height: 50px;
     margin-left: 14px;
     font-size: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+section#contents {
+    height: 850px;
+    position: relative;
+}
+
+#contents > .container {
+    border: 1px solid black;
+}
+
+.blogNotice {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.blogNotice::before {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    content: "NOTICE";
+    letter-spacing: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #00c73c;
+}
+
+.blogNotice > span {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 40px;
+    bottom: 0;
+}
+
+.introBlog {
+    margin-top: 15px;
+    width: 100%;
+    height: 60px;
+}
+
+.introBlog > span {
+    width: 100%;
+    height: 50%;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 40px;
+    display: block;
+    float: left;
+}
+
+.introBlog > span.intro {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.topFive {
+    margin-top: 25px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.topFive > span {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.topFive > .topBind {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    bottom: -16px;
+}
+
+.topBind > .topPost {
+    width: 19%;
+    height: 100%;
+    display: block;
+    float: left;
+    margin-right: 13px;
+    position: relative;
+}
+
+.topBind > .topPost:last-child {
+    margin-right: 0;
+}
+
+.topPost > .cardList a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cardList a > .topIMG {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.topIMG > img {
+    width: 211px;
+    height: 180px;
+}
+
+.cardList a > .topTitle {
+    margin-top: 2px;
+    width: 100%;
+    height: 68px;
+    padding: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 3;
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+
+.cardList a:hover {
+    text-decoration: none;
 }
 
 section#foot {
@@ -128,7 +329,7 @@ footer {
 }
 
 footer > span {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 50%;
     line-height: 30px;
