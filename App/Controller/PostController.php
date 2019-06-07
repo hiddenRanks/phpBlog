@@ -9,6 +9,10 @@ class PostController extends MasterController {
         $this->render("post/write");
     }
 
+    public function writeSearch() {
+        $this->render("post/search");
+    }
+
     public function writeProcess() {
         $title = $_POST['title'];
         $content = $_POST['content'];

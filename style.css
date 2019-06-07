@@ -6,8 +6,9 @@
     box-sizing: border-box;
 }
 
+/* 모든 페이지 공통 설정 */
 section {
-    width: 1902px;
+    width: 100%;
     position: relative;
 }
 
@@ -19,7 +20,9 @@ section {
     height: 100%;
     z-index: 10;
 }
+/* 모든 페이지 공통 설정 끝 */
 
+/* 헤더 크기 및 이미지 설정 */
 section#head {
     height: 450px;
     overflow: hidden;
@@ -37,28 +40,31 @@ section#head > .logo::before {
 .logo > img {
     width: 100%;
     height: 100%;
+    min-height: 450px;
+}
+/* 헤더 크기 및 이미지 설정 끝 */
+
+/* 헤더의 아이콘 설정 */
+.container > .homeIcon {
+    position: absolute;
+    width: 110px;
+    height: 50px;
 }
 
 .container > .homeIcon > span {
-    position: absolute;
     width: 50px;
     height: 50px;
     margin-left: 10px;
     line-height: 50px;
-    top: 0;
-    left: 20px;
-}
-
-.container > .homeIcon span.search {
-    position: absolute;
-    left: 7%;
 }
 
 .homeIcon > span > a { 
     color: #fff; 
     text-decoration: none; 
 }
+/* 헤더의 아이콘 설정 끝 */
 
+/* 헤더의 로그인, 포스팅 로그아웃 설정 */
 .container > .notLogin a {
     position: absolute;
     width: 8%;
@@ -92,7 +98,7 @@ section#head > .logo::before {
 .loging > div a {
     width: 15%;
     height: 50px;
-    line-height: 45px;
+    line-height: 48px;
     text-align: center;
     font-weight: bold;
     font-size: 18px;
@@ -124,6 +130,8 @@ section#head > .logo::before {
     background-color: #ff3d3d;
     color: #fff;
 }
+/* 헤더의 로그인, 포스팅 로그아웃 설정 끝 */
+
 
 header {
     width: 100%;
@@ -131,6 +139,7 @@ header {
     position: relative;
 }
 
+/* 헤더의 블로그 이름, 방문자/총방문자 수 */
 header > .looksBlog, .textLogo {
     margin: 0 auto;
     margin-top: 10%;
@@ -155,10 +164,11 @@ header > .textLogo {
 
 .textLogo > .blogName {
     font-size: 35px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     color: #fff;
 }
+/* 헤더의 블로그 이름, 방문자/총방문자 수 끝 */
 
+/* 헤더의 블로그 프로필, 닉네임 설정 */
 .profile {
     margin-top: 30px;
     width: 100%;
@@ -166,36 +176,33 @@ header > .textLogo {
     color: #fff;
 }
 
-.profile > .imgProfile {
-    width: 55px;
-    height: 55px;
+.profile > .imgProfile img {
+    width: 65px;
+    height: 65px;
     border-radius: 100%;
     overflow: hidden;
-    background-color: #fff;
-    border: 1px solid #fff;
     float: left;
 }
 
 .profile > .nickName {
-    line-height: 50px;
+    line-height: 65px;
     margin-left: 14px;
     font-size: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+/* 헤더의 블로그 프로필, 닉네임 설정 끝 */
 
 section#contents {
-    height: 850px;
+    height: 1400px;
     position: relative;
 }
 
-#contents > .container {
-    border: 1px solid black;
-}
-
+/* 블로그 공지사항 설정 */
 .blogNotice {
     margin-top: 20px;
     width: 100%;
     height: 60px;
+    border-bottom: 1px solid #eaeaea;
     position: relative;
 }
 
@@ -212,19 +219,22 @@ section#contents {
 
 .blogNotice > span {
     position: absolute;
+    margin-top: 20px;
     width: 100%;
     height: 40px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
     line-height: 40px;
-    bottom: 0;
 }
+/* 블로그 공지사항 설정 끝 */
 
+/* 블로그 소개 설정 */
 .introBlog {
     margin-top: 15px;
     width: 100%;
     height: 60px;
+    padding-bottom: 10px;
 }
 
 .introBlog > span {
@@ -240,9 +250,11 @@ section#contents {
 
 .introBlog > span.intro {
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
 }
+/* 블로그 소개 설정 끝 */
 
+/* 블로그 인기 5순위 */
 .topFive {
     margin-top: 25px;
     width: 100%;
@@ -272,7 +284,7 @@ section#contents {
     height: 100%;
     display: block;
     float: left;
-    margin-right: 13px;
+    margin-right: 5px;
     position: relative;
 }
 
@@ -297,15 +309,16 @@ section#contents {
     height: 180px;
 }
 
-.cardList a > .topTitle {
+.cardList a > .topTitle span {
     margin-top: 2px;
     width: 100%;
-    height: 68px;
+    height: 44px;
+    line-height: 22px;
     padding: 3px;
     overflow: hidden;
-    text-overflow: ellipsis;
-    line-clamp: 3;
-    line-height: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     font-size: 15px;
     font-weight: 600;
     color: black;
@@ -314,11 +327,306 @@ section#contents {
 .cardList a:hover {
     text-decoration: none;
 }
+/* 블로그 인기 5순위 끝 */
 
-section#foot {
+/* 블로그 최신 글 6개 */
+.latelyPost {
+    margin-top: 30px;
+    width: 100%;
+    height: 880px;
+}
+
+.latelyPost > span {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.latelyPost > .girdPost {
+    margin: 0 auto;
+    width: 100%;
+    height: 85%;
+}
+
+.girdPost > ul {
+    margin: 0 auto;
+    width: 97%;
+    height: 100%;
+}
+
+.girdPost > ul > li {
+    margin-top: 5px;
+    margin-right: 1%;
+    width: 49%;
+    height: 250px;
+    display: block;
+    float: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.girdPost .postDate {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.girdPost a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.girdPost .latelyTitle span {
+    width: 100%;
+    line-height: 25px;
+    font-weight: 800;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: black;
+}
+
+.girdPost .latelyIMG {
+    margin-top: 4px;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+}
+
+.latelyIMG > a {
+    z-index: 99;
+}
+
+.latelyIMG a::after {
     position: absolute;
-    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
+    border: 1px solid rgba(0,0,0,.05);
+    content: '';
+}
+
+.latelyIMG a > img {
+    width: 100%;
+    height: 300%;
+    margin: -100% 0;
+}
+/* 블로그 최신 글 6개 끝 */
+
+/* 블로그 최신글 페이징 */
+.listPage ul {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 60%;
+    height: 35px;
+}
+
+.listPage > ul > li {
+    width: 11%;
+    height: 100%;
+    text-align: center;
+    display: block;
+    float: left;
+    cursor: pointer;
+    border-right: 1px solid #ddd;
+}
+
+.listPage > ul > li:first-child {
+    border-left: 1px solid #ddd;
+}
+
+.listPage > ul > li:hover {
+    background-color: #888;
+}
+
+.listPage > ul > li a {
+    line-height: 35px;
+    color: black;
+}
+
+.listPage > ul >li:hover a {
+    text-decoration: none;
+    color: #fff;
+}
+/* 블로그 최신글 페이징 끝 */
+
+/* 블로그의 모든 아웃라인 삭제 */
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+/* 블로그의 모든 아웃라인 삭제 끝 */
+
+/* 블로그 로그인 설정 */
+.loginIMG img {
+    position: fixed;
+}
+
+.loginBox {
+    position: fixed;
+    width: 500px;
+    height: 350px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.loginBox > h2 {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 40%;
+    text-align: center;
+    font-size: 34px;
+    color: #fff;
+}
+
+.loginBox .inputInfo {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 80%;
+    height: 160px;
+}
+
+.inputInfo > input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.inputInfo > input:last-child {
+    margin-top: 20px;
+}
+
+.inputInfo > input::placeholder {
+    color: #888;
+}
+
+.loginBox .submitBox {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 40%;
+    height: 40px;
+    position: relative;
+}
+
+.submitBox > .loginSubmit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 40px;
+    background-color: #009df6;
+    border: 0;
+    border-radius: 8px;
+}
+
+.loginSubmit:hover {
+    background-color: #0085d0;
+}
+/* 블로그 로그인 설정 끝 */
+
+/* 블로그 포스팅 설정 */
+section#writeBox {
+    width: 100%;
+    height: 700px;
+}
+
+#writeBox > .container > .moveWrite {
+    height: 100%;
+    padding-top: 10px;
+}
+
+.moveWrite .inputTitle {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+}
+
+.inputTitle > input.title {
+    width: 100%;
+    height: 35px;
+}
+
+.moveWrite .inputContent {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80%;
+    height: 550px;
+}
+
+.inputContent > textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.moveWrite .submitPost {
+    margin-top: 10px;
+    margin-right: 115px;
+    width: 8%;
+    height: 35px;
+    float: right;
+}
+
+.submitPost > .submitWrite {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #009df6;
+}
+
+.submitPost > .submitWrite:hover {
+    background-color: #0085d0;
+}
+/* 블로그 포스팅 설정 끝 */
+
+/* 블로그 포스팅의 글자 수 설정 */
+.textCheck {
+    margin-top: 10px;
+    margin-left: 115px;
+    font-weight: bold;
+}
+/* 블로그 포스팅의 글자 수 설정 끝 */
+
+/* 블로그 알림 설정 */
+#toastList {
+    position: fixed;
+    width: 250px;
+    height: 60px;
+    bottom: 10px;
+    right: 10px;
+    text-align: left;
+    line-height: 60px;
+    border: 2px solid turquoise;
+    border-radius: 10px;
+    background-color: darkturquoise;
+    display: none;
+}
+/* 블로그 알림 설정 끝 */
+
+/* 푸터 설정 */
+section#foot {
+    margin-top: 5px;
+    height: 60px;
     background-color: #ccc;
 }
 
@@ -343,6 +651,7 @@ footer > span.maker {
 
 footer > span.reference { 
     bottom: 0; left: 0;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500; 
 }
+/* 푸터 설정 끝 */

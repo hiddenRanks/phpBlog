@@ -28,23 +28,23 @@
         <div class="container">
             @if(!isset($_SESSION['user']))
             <div class="notLogin">
-                <a href="#">Login</a>
+                <a href="/login">Login</a>
             </div>
             @else
             <div class="loging">
                 <div class="posting">
-                    <a href="#">포스팅</a>
+                    <a href="/post">포스팅</a>
                 </div>
 
                 <div class="logout">
-                    <a href="#">로그아웃</a>
+                    <a href="/logout">로그아웃</a>
                 </div>
             </div>
             @endif
 
             <div class="homeIcon">
                 <span>
-                    <a href="#">HOME</a>
+                    <a href="/">HOME</a>
                 </span>
                 <span class="search">
                     <a href="#">
@@ -60,9 +60,11 @@
                 </div>
 
                 <div class="textLogo">
-                    <span class="blogName">웹툰과 만화의 방</span>
+                    <span class="blogName">만화와 게임!</span>
                     <div class="profile">
-                        <div class="imgProfile"></div>
+                        <div class="imgProfile">
+                            <img src="images/nightRunProfile.jpg">
+                        </div>
                         <span class="nickName">프레이</span>
                     </div>
                 </div>
@@ -72,14 +74,16 @@
 
     @yield('maincontent')
 
-    <!-- <section id="foot">
+    <section id="foot">
         <div class="container">
             <footer>
                 <span class="maker">DESIGN BY mong</span>
                 <span class="reference">참고한 곳: naver blog</span>
             </footer>
         </div>
-    </section> -->
+    </section>
+
+    <div id="toastList"></div>
 </body>
 
 </html>

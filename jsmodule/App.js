@@ -1,10 +1,12 @@
 import Slide from './Slide';
+import ByteCheck from './ByteCheck';
 
 import $ from 'jquery';
 
 export default class App {
     constructor() {
         this.makeSlider();
+        this.ByteCheck();
         this.addEventList();
     }
 
@@ -38,5 +40,9 @@ export default class App {
 
     makeSlider() {
         this.slide = new Slide();
+    }
+
+    ByteCheck() {
+        this.byteCheck = new ByteCheck();
     }
 }
