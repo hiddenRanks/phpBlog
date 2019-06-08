@@ -98,7 +98,7 @@ section#head > .logo::before {
 .loging > div a {
     width: 15%;
     height: 50px;
-    line-height: 48px;
+    line-height: 45px;
     text-align: center;
     font-weight: bold;
     font-size: 18px;
@@ -469,8 +469,11 @@ textarea:focus {
 /* 블로그의 모든 아웃라인 삭제 끝 */
 
 /* 블로그 로그인 설정 */
-.loginIMG img {
+.loginIMG {
     position: fixed;
+    width: 100%;
+    height:100%;
+    background-image: url(/images/i13428719182.jpg);
 }
 
 .loginBox {
@@ -546,7 +549,7 @@ textarea:focus {
 /* 블로그 포스팅 설정 */
 section#writeBox {
     width: 100%;
-    height: 700px;
+    height: 750px;
 }
 
 #writeBox > .container > .moveWrite {
@@ -556,29 +559,28 @@ section#writeBox {
 
 .moveWrite .inputTitle {
     margin: 0 auto;
+    margin-top: 10px;
     width: 80%;
     position: relative;
 }
 
 .inputTitle > input.title {
     width: 100%;
-    height: 35px;
+    height: 45px;
 }
 
 .moveWrite .inputContent {
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 80%;
     height: 550px;
 }
 
-.inputContent > textarea {
-    width: 100%;
-    height: 100%;
+.ck-editor__editable {
+    min-height: 450px;
 }
 
 .moveWrite .submitPost {
-    margin-top: 10px;
     margin-right: 115px;
     width: 8%;
     height: 35px;

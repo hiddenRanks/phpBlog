@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <div class="loginIMG">
-        <img src="images/i13428719182.jpg">
-    </div>
+    <div class="loginIMG"></div>
     <div class="loginBox">
         <h2>Welcome!</h2>
         <form action="/login" method="post">

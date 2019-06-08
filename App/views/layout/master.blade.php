@@ -15,6 +15,7 @@
     unset($_SESSION['flash_msg']);
     @endphp
     @endif
+    @yield('scriptsection')
     <script src="/js/app.js"></script>
     <title>My PHP Blog</title>
 </head>

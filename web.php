@@ -4,6 +4,7 @@ use Gondr\Route;
 
 Route::get("/", "StaticController@index"); //정적 페이지 관리
 Route::get("/postSearch", "PostController@writeSearch");
+Route::get("/view", "Postcontroller@viewPage");
 
 if(!isset($_SESSION['user'])) {
     Route::get("/login", "UserController@loginPage");
@@ -11,5 +12,6 @@ if(!isset($_SESSION['user'])) {
 } else {
     Route::get("/logout", "UserController@logout");
     Route::get("/post", "PostController@writePage");
-    Route::post("/post", "Postcontroller@writeProcess");
+    Route::post("/post", "PostController@writeProcess");
+    Route::post("/upload", "PostController@uploadHandle"); //첨부파일 업로드
 }

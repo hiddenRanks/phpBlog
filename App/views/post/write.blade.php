@@ -1,5 +1,9 @@
 @extends('layout/master')
 
+@section('scriptsection')
+    <script src="/js/editor.js"></script>
+@endsection
+
 @section('maincontent')
 <section id="writeBox">
     <div class="container">
@@ -16,10 +20,6 @@
                     <input type="submit" value="글 올리기" class="submitWrite">
                 </div>
             </form>
-
-            <div class="textCheck">
-                <span class="byteCheck">0</span>byte/<span>2000byte</span>
-            </div>
         </div>
     </div>
 </section>

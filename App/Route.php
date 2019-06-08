@@ -24,8 +24,7 @@ class Route
         }
 
         $cInstance = new \Gondr\Controller\StaticController();
-        $cInstance->index();
-        // $cInstance->errorPage("존재하지 않는 페이지이거나, 권한이 없습니다.");
+        $cInstance->errorPage("존재하지 않는 페이지이거나, 권한이 없습니다.");
         exit;
     }
 
