@@ -1,27 +1,26 @@
 @extends('layout/master')
 
 @section('maincontent')
-<section id="writeBox">
+<section id="getPosting">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-10">
-                <div class="card">
-                    <div class="card-header">
-                        {{$data->title}}
-                        <span class="badge badge-light">
-                            {{$data->writer}}
-                        </span>
-                        <span class="badge badge-primary">
-                            {{$data->wdate}}
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        <!-- !!을 쓰면 html태그는 text출력중에 거름 -->
-                        {!! $data->content !!}
-                    </div>
+        <article>
+            <div class="postingTitle">
+                <h2>{{$data->title}}</h2>
+                <div class="addInfo">
+                    <span class="postingDate">
+                        {{ date( "Y.m.d", strtotime($data->wdate) ) }}
+                    </span>
+                    <span class="postingWriter">
+                        <span>by</span> {{$data->writer}}
+                    </span>
                 </div>
             </div>
-        </div>
+
+            <div class="postingCon">
+                <!-- !!을 쓰면 html태그는 text출력중에 거름 -->
+                {!! $data->content !!}
+            </div>
+        </article>
     </div>
 </section>
 @endsection

@@ -25,7 +25,7 @@ export default class Editor{
             let list = console.log(ck.ui.componentFactory.names());
             console.log(list);
 
-            //업로드시 자동으로 createUploadAdaptor을 불러온다.
+            //플러그인중 FileRepository를 가져와서 업로드시 자동으로 createUploadAdaptor을 불러온다.
             ck.plugins.get('FileRepository').createUploadAdapter = (loader) => new MyUploader(loader);
         }).catch( err => {
             console.log(err);

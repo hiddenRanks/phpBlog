@@ -31,6 +31,7 @@ class PostController extends MasterController {
     }
 
     public function uploadHandle() {
+        //FormData에서 추가한 upload라는 키에 이미지 경로가 들어있기 때문
         if(!isset($_FILES['upload']) || $_FILES['upload']['name'] == "") {
             $this->json(['error'=>['msg'=>'이미지가 없습니다.']], 400);
             exit;
@@ -54,7 +55,6 @@ class PostController extends MasterController {
     }
 
     public function viewPage() {
-        
         if(!isset($_GET['id'])) {
             $_SESSION['flash_msg'] = ['msg' => '존재하지 않는 글'];
             header("Location: /");

@@ -26,7 +26,7 @@
             <img src="images/CC4nHv6.jpg">
         </div>
 
-        <div class="container">
+        <div class="containers">
             @if(!isset($_SESSION['user']))
             <div class="notLogin">
                 <a href="/login">Login</a>
@@ -76,12 +76,22 @@
     @yield('maincontent')
 
     <section id="foot">
-        <div class="container">
-            <footer>
-                <span class="maker">DESIGN BY mong</span>
-                <span class="reference">참고한 곳: naver blog</span>
-            </footer>
-        </div>
+        <footer>
+            <div class="topMenu">
+                <a href="/">
+                    <span>블로그 홈</span>
+                </a>
+            </div>
+
+            <div class="bottomMenu">
+                <span>
+                    COPYRIGHT mongjja, ALL RIGHT RESERVED.
+                </span>
+                <span>
+                    참고한 곳: <a href="#">naver blog</a>, <a href="#">tistory</a>
+                </span>
+            </div>
+        </footer>
     </section>
 
     <div id="toastList"></div>

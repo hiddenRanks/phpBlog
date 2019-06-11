@@ -5,11 +5,11 @@ export default class MyUploader {
     }
 
     upload() {
-        console.log("업로드 시작");
+        //console.log("업로드 시작");
         return this.loader.file.then(file => new Promise((res, rej) => {
             this._initRequest();
             this._initListener(res, rej, file);
-            this._sendRequest(file);
+            this._sendRequest(file); //업로드를 할시 작동
         }));
     }
 
@@ -33,23 +33,25 @@ export default class MyUploader {
         //로딩 성공
         xhr.addEventListener('load', () => {
             const response = xhr.response;
-            console.log(response);
+            //console.log(response);
 
             if(!response || response.error) {
-                //ajax를 보낼때 성공은 햇으나 응답이 없거나 에러가 존재할 경우
+                //ajax를 보낼때 성공은 햇으나 응답이 없으며 에러가 존재할 경우
                 return rej(response && response.error ? response.error.msg : genericErrorText);
             }
 
+            //요청시 기본적으로 이미지 경로를 요청한다.
             res({
-                default: response.url
+                default: response.url //이미지 경로
             });
         });
     }
 
     //실제 전송
     _sendRequest(file) {
+        //FormData => multipart/form-data대신 사용한다고 생각하자.
         const data = new FormData();
-        data.append("upload", file);
+        data.append("upload", file); //data 안에 key-value(upload-파일 경로)추가
         this.xhr.send(data);
     }
 }

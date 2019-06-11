@@ -2,7 +2,7 @@
 
 @section('maincontent')
 <section id="contents">
-    <div class="container">
+    <div class="containers">
         <div class="blogNotice">
             <span>쓸 공지가 없습니다, 끼요오오오옷!!</span>
         </div>
@@ -125,7 +125,7 @@
                     @for($i = $pager->start; $i <= $pager->end; $i++)
                         @if($i == $pager->current)
                         <li style="background-color: #888;">
-                            <a href="/?p={{$i}}">{{$i}}</a>
+                            <a href="/?p={{$i}}" style="color: #fff;">{{$i}}</a>
                         </li>
                         @else
                         <li>

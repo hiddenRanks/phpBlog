@@ -12,7 +12,7 @@ section {
     position: relative;
 }
 
-.container {
+.containers {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -45,13 +45,13 @@ section#head > .logo::before {
 /* 헤더 크기 및 이미지 설정 끝 */
 
 /* 헤더의 아이콘 설정 */
-.container > .homeIcon {
+.containers > .homeIcon {
     position: absolute;
     width: 110px;
     height: 50px;
 }
 
-.container > .homeIcon > span {
+.containers > .homeIcon > span {
     width: 50px;
     height: 50px;
     margin-left: 10px;
@@ -65,7 +65,7 @@ section#head > .logo::before {
 /* 헤더의 아이콘 설정 끝 */
 
 /* 헤더의 로그인, 포스팅 로그아웃 설정 */
-.container > .notLogin a {
+.containers > .notLogin a {
     position: absolute;
     width: 8%;
     height: 45px;
@@ -78,7 +78,7 @@ section#head > .logo::before {
     border: 2px solid #fff;
 }
 
-.container > .notLogin a:hover {
+.containers > .notLogin a:hover {
     border: 0;
     background-color: #fff;
     color: black;
@@ -87,7 +87,7 @@ section#head > .logo::before {
     text-decoration: none;
 }
 
-.container > .loging {
+.containers > .loging {
     position: absolute;
     width: 80%;
     height: 50px;
@@ -429,6 +429,12 @@ section#contents {
     height: 35px;
 }
 
+.listPage > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .listPage > ul > li {
     width: 11%;
     height: 100%;
@@ -448,6 +454,7 @@ section#contents {
 }
 
 .listPage > ul > li a {
+    display: block;
     line-height: 35px;
     color: black;
 }
@@ -547,9 +554,9 @@ textarea:focus {
 /* 블로그 로그인 설정 끝 */
 
 /* 블로그 포스팅 설정 */
-section#writeBox {
+#writeBox {
     width: 100%;
-    height: 750px;
+    height: 700px;
 }
 
 #writeBox > .container > .moveWrite {
@@ -576,8 +583,10 @@ section#writeBox {
     height: 550px;
 }
 
+/*ck사용시 높이 설정*/
 .ck-editor__editable {
     min-height: 450px;
+    max-height: 450px;
 }
 
 .moveWrite .submitPost {
@@ -601,13 +610,56 @@ section#writeBox {
 }
 /* 블로그 포스팅 설정 끝 */
 
-/* 블로그 포스팅의 글자 수 설정 */
-.textCheck {
-    margin-top: 10px;
-    margin-left: 115px;
-    font-weight: bold;
+/* 블로그 게싯글 보기 */
+#getPosting {
+    width: 100%;
 }
-/* 블로그 포스팅의 글자 수 설정 끝 */
+
+article {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 450px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.postingTitle {
+    width: 100%;
+    display: block;
+    float: left;
+    font-weight: 600;
+    font-size: 34px;
+    text-align: center;
+}
+
+.postingTitle > .addInfo {
+    width: 146px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.addInfo > span {
+    float: left;
+    height: 100%;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.addInfo > .postingDate {
+    margin-right: 8px;
+    color: #b3b3b3;
+}
+
+.addInfo > .postingWriter {
+    color: #797979;
+}
+
+.postingCon {
+    margin-top: 80px;
+    padding: 15px;
+}
+/* 블로그 게싯글 보기 끝 */
 
 /* 블로그 알림 설정 */
 #toastList {
@@ -629,31 +681,15 @@ section#writeBox {
 section#foot {
     margin-top: 5px;
     height: 60px;
-    background-color: #ccc;
+    border-top: 1px solid #acacac;
+    background-color: #fff;
 }
 
 footer {
     width: 100%;
     height: 100%;
-    text-align: center;
-}
-
-footer > span {
-    position: fixed;
-    width: 100%;
-    height: 50%;
-    line-height: 30px;
-}
-
-footer > span.maker { 
-    top: 0; left: 0; 
-    font-size: 18px;
-    font-weight: bold;
-}
-
-footer > span.reference { 
-    bottom: 0; left: 0;
-    font-size: 14px;
-    font-weight: 500; 
+    /*display:flex !important;*/ /* 부트스트랩과 겹쳐서 임포턴트 필수 */
+    /*justify-content: center; 세로 */
+    /*align-items: center; 가로 */
 }
 /* 푸터 설정 끝 */
