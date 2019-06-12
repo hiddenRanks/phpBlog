@@ -24,6 +24,7 @@ section {
 
 /* 헤더 크기 및 이미지 설정 */
 section#head {
+    width: 100%;
     height: 450px;
     overflow: hidden;
     position: relative;
@@ -410,7 +411,7 @@ section#contents {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 1px solid rgba(0,0,0,.05);
+    border: 1px solid rgba(0,0,0, 0.1);
     content: '';
 }
 
@@ -556,10 +557,10 @@ textarea:focus {
 /* 블로그 포스팅 설정 */
 #writeBox {
     width: 100%;
-    height: 700px;
+    height: 650px;
 }
 
-#writeBox > .container > .moveWrite {
+#writeBox > .containers > .moveWrite {
     height: 100%;
     padding-top: 10px;
 }
@@ -590,7 +591,8 @@ textarea:focus {
 }
 
 .moveWrite .submitPost {
-    margin-right: 115px;
+    margin-top: -40px;
+    margin-right: 120px;
     width: 8%;
     height: 35px;
     float: right;
@@ -658,6 +660,71 @@ article {
 .postingCon {
     margin-top: 80px;
     padding: 15px;
+    width: 100%;
+    min-height: 650px;
+}
+
+.postingCon img {
+    max-width: 100%;
+}
+
+.getBoardButton {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+
+.getBoardButton > div {
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    display: block;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+}
+
+.getBoardButton > div > a {
+    text-decoration: none;
+}
+
+.conMod {
+    right: 110px;
+    background-color: #009df6;
+    border-radius: 3px;
+}
+
+.conMod a {
+    display: block;
+    color: #fff;
+}
+
+.conMod:hover {
+    background-color: #0085d0;
+}
+
+.conMod:hover a {
+    color: #fff;
+}
+
+.conDel {
+    right: 0;
+    background-color: #ff5151;
+    border-radius: 3px;
+}
+
+.conDel a {
+    display: block;
+    color: #fff;
+}
+
+.conDel:hover {
+    background-color: #ff2f2f;
+}
+
+.conDel:hover a {
+    color: #fff;
 }
 /* 블로그 게싯글 보기 끝 */
 
@@ -691,5 +758,54 @@ footer {
     /*display:flex !important;*/ /* 부트스트랩과 겹쳐서 임포턴트 필수 */
     /*justify-content: center; 세로 */
     /*align-items: center; 가로 */
+}
+
+footer > .topMenu {
+    width: 100%;
+    height: 50%;
+    line-height: 30px;
+}
+
+.topMenu a {
+    text-decoration: none;
+}
+
+.topMenu span {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.topMenu > a span {
+    margin-left: 10px;
+}
+
+footer > .bottomMenu {
+    width: 100%;
+    height: 50%;
+    line-height: 30px;
+    position: relative;
+}
+
+.bottomMenu span {
+    font-size: 12px;
+}
+
+.bottomMenu span > a{
+    color: #888;
+}
+
+.bottomMenu span > .users {
+    color: #888;
+}
+
+.bottomMenu span:first-child {
+    position: absolute;
+    left: 10px;
+}
+
+.bottomMenu span:last-child {
+    position: absolute;
+    right: 10px;
 }
 /* 푸터 설정 끝 */

@@ -21,6 +21,17 @@
                 {!! $data->content !!}
             </div>
         </article>
+
+        @if(isset($_SESSION['user']) && $_SESSION['user']->id == $data->writer)
+        <div class="getBoardButton">
+            <div class="conMod">
+                <a href="/updateBoard?id={{$data->id}}">수정</a>
+            </div>
+            <div class="conDel">
+                <a href="/deleteBoard?id={{$data->id}}">삭제</a>
+            </div>
+        </div>
+        @endif
     </div>
 </section>
 @endsection

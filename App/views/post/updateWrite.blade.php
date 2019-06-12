@@ -8,12 +8,13 @@
 <section id="writeBox">
     <div class="containers">
         <div class="moveWrite">
-            <form action="/post" method="post">
+            <form action="/update" method="post">
+                <input type="text" name="id" value="{{$info->id}}" style="display: none;">
                 <div class="inputTitle">
-                    <input type="text" name="title" class="title" placeholder="제목 입력" autocomplete="off">
+                    <input type="text" name="title" class="title" placeholder="제목 입력" autocomplete="off" value="{{$info->title}}">
                 </div>
                 <div class="inputContent">
-                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    <textarea name="content" id="content" cols="30" rows="10" style="opacity: 0;" >{{$info->content}}</textarea>
                 </div>
 
                 <div class="submitPost">

@@ -30,6 +30,43 @@ class PostController extends MasterController {
         }
     }
 
+    public function getUpdate() {
+        $id = $_GET['id'];
+
+        $sql = "SELECT * FROM boards WHERE id=?";
+        $info = DB::fetch($sql, [$id]);
+
+        $this->render("post/updateWrite", ['info' => $info]);
+    }
+
+    public function updateProcess() {
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+
+        $sql = "UPDATE boards SET title=?, content=? WHERE id=?";
+        $cnt = DB::query($sql, [$title, $content, $id]);
+
+        if($cnt != 1) {
+            header("Location: /updateBoard?id=" . $id);
+        } else {
+            header("Location: /");
+        }
+    }
+
+    public function deleteProcess() {
+        $id = $_GET['id'];
+
+        $sql = "DELETE FROM boards WHERE id=?";
+        $cnt = DB::query($sql, [$id]);
+
+        if($cnt != 1) {
+            echo "이상한 오류";
+        } else {
+            header("Location: /");
+        }
+    }
+
     public function uploadHandle() {
         //FormData에서 추가한 upload라는 키에 이미지 경로가 들어있기 때문
         if(!isset($_FILES['upload']) || $_FILES['upload']['name'] == "") {

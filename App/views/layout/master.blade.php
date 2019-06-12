@@ -48,7 +48,7 @@
                     <a href="/">HOME</a>
                 </span>
                 <span class="search">
-                    <a href="#">
+                    <a href="/searchAll">
                         <i class="fas fa-search"></i>
                     </a>
                 </span>
@@ -85,10 +85,10 @@
 
             <div class="bottomMenu">
                 <span>
-                    COPYRIGHT mongjja, ALL RIGHT RESERVED.
+                    COPYRIGHT <a href="#" class="users">mongjja</a>, ALL RIGHT RESERVED.
                 </span>
                 <span>
-                    참고한 곳: <a href="#">naver blog</a>, <a href="#">tistory</a>
+                    참고한 곳: <a href="#">naver blog</a>, <a href="https://www.tistory.com/" target="_blank">tistory</a>
                 </span>
             </div>
         </footer>
