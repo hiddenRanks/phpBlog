@@ -5,7 +5,7 @@ use Gondr\Route;
 Route::get("/", "StaticController@index"); //정적 페이지 관리
 Route::get("/postSearch", "PostController@writeSearch");
 Route::get("/view", "PostController@viewPage");
-Route::get("/search", "UserController@searchAll");
+Route::post("/search", "UserController@searchAll");
 Route::get("/searchAll", "UserController@searchPage");
 
 if(!isset($_SESSION['user'])) {

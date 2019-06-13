@@ -3,6 +3,7 @@
 namespace Gondr\Controller;
 
 use Gondr\DB;
+use Gondr\Pager;
 
 class UserController extends MasterController
 {
@@ -44,26 +45,27 @@ class UserController extends MasterController
 
     public function searchAll()
     {
-        if (!isset($_GET['title'])) {
+        if (!isset($_POST['title'])) {
             $title = "";
+            echo "asdf";
         } else {
-            $title = $_GET['title'];
+            $title = $_POST['title'];
 
-            $sql = "SELECT * FROM boards WHERE title=?";
-            $cnt = DB::fetch($sql, [$title]);
+            $sql = "SELECT * FROM boards WHERE title like ?";
+            $cnt = DB::fetch($sql, ["%".$title."%"]);
 
-            if ($cnt == null) {
-                header("Location: post/allSearch");
+            if (!isset($cnt)) {
+                echo "aasdf";
             } else {
-                $title = $_GET['title'];
+                $title = $_POST['title'];
 
                 $page = 1;
                 if (!is_numeric($page)) {
                     $page = 1;
                 }
 
-                $sql = "SELECT * FROM boards WHERE title=? ORDER BY id DESC LIMIT " . ($page - 1) * 6 . ", 6";
-                $list = DB::fetchAll($sql, [$title]);
+                $sql = "SELECT * FROM boards WHERE title like ? LIMIT " . ($page - 1) * 6 . ", 6";
+                $list = DB::fetchAll($sql, ["%".$title."%"]);
                 $imgPattern = '/<img src=".+">/';
 
                 foreach ($list as $item) {
@@ -76,9 +78,9 @@ class UserController extends MasterController
                 }
 
                 $pager = new Pager();
-                $pager->calc($page);
+                $pager->likeCalc($page, $title);
 
-                $this->render("allSearch", ['list' => $list, 'pager' => $pager]);
+                $this->render("post/allSearch", ['list' => $list, 'pager' => $pager]);
             }
         }
     }

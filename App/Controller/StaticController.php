@@ -20,6 +20,7 @@ class StaticController extends MasterController
         $list = DB::fetchAll($sql);
         $imgPattern = '/<img src=".+">/'; //정규식을 씀으로써 게시판 글쓰기의 해킹을 방지
 
+        //최신글 이미지 거르기
         foreach($list as $item) {
             //내용 중에서 정규식의 값과 비슷한 것을 골라서 $matches에 저장
             $match = preg_match($imgPattern, $item->content, $matches);
@@ -28,14 +29,27 @@ class StaticController extends MasterController
                 $item->thumbnail = $matches[0];
             } else {
                 //비슷한게 없다면 이미지 하나를 준비해서 넣는다.
-                $item->thumbnail = "<img src='/images/no-image.jpg'>";
+                $item->thumbnail = "<img src='/images/no-image.png' class='noImage'>";
             }
         }
 
         $pager = new Pager();
         $pager->calc($page);
 
-        $this->render("main", ['list' => $list, 'pager'=>$pager]);
+        $sql = "SELECT * FROM boards ORDER BY hit DESC LIMIT 0, 5";
+        $top = DB::fetchAll($sql);
+
+        //인기순 이미지 거르기
+        foreach($top as $items) {
+            $match = preg_match($imgPattern, $items->content, $matches);
+            if($match > 0) {
+                $items->thumbnail = $matches[0];
+            } else {
+                $items->thumbnail = "<img src='/images/no-image.png'>";
+            }
+        }
+
+        $this->render("main", ['list' => $list, 'pager'=>$pager, 'top'=>$top]);
     }
 
     public function errorPage($msg)

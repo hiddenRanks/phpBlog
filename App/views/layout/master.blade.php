@@ -85,7 +85,7 @@
 
             <div class="bottomMenu">
                 <span>
-                    COPYRIGHT <a href="#" class="users">mongjja</a>, ALL RIGHT RESERVED.
+                    COPYRIGHT <a href="/searchAll" class="users">mongjja</a>, ALL RIGHT RESERVED.
                 </span>
                 <span>
                     참고한 곳: <a href="#">naver blog</a>, <a href="https://www.tistory.com/" target="_blank">tistory</a>

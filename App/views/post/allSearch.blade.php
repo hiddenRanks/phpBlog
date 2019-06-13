@@ -3,10 +3,14 @@
 @section('maincontent')
 <section id="search">
     <div class="container">
-        <form action="/search" method="get">
-            <input type="text" name="title" class="postingTitle" placeholder="제목을 입력하세요.">
+        <form action="/search" method="post">
+            <div class="searchBox">
+                <input type="text" name="title" class="searchTitle" placeholder="제목을 입력하세요.">
+                <input type="submit" value="검색" class="submitSearch">
+            </div>
         </form>
 
+        @if(isset($list))
         <div class="latelyPost">
             <span>최신글</span>
             <div class="girdPost">
@@ -32,7 +36,13 @@
                     @endforeach
                 </ul>
             </div>
+            @else
+            <div class="latelyPost">
 
+            </div>
+            @endif
+
+            @if(isset($pager))
             <div class="listPage">
                 <ul>
                     <li>
@@ -76,6 +86,8 @@
                 </ul>
             </div>
         </div>
+        @else
+        @endif
     </div>
 </section>
 @endsection

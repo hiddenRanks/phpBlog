@@ -99,6 +99,7 @@ class PostController extends MasterController {
         }
         $id = $_GET['id'];
 
+        DB::query("UPDATE boards SET hit=hit+1 WHERE id=?", [$id]);
         $data = DB::fetch("SELECT * FROM boards WHERE id = ?", [$id]);
         
         if(!$data) {
