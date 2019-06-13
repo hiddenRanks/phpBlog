@@ -12,7 +12,6 @@
 
         @if(isset($list))
         <div class="latelyPost">
-            <span>최신글</span>
             <div class="girdPost">
                 <ul>
                     @foreach($list as $item)
